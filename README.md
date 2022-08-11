@@ -1,5 +1,6 @@
 # De-Google-Script
-Un script que se encarga de eliminar la mayria de aplicaciones del dispositivo Android.
+Un script que se encarga de eliminar las aplicaciones de Google del dispositivo Android.
+
 Elimina las siguientes aplicaciones:
 
 - YouTube. (Recomendado utilizar NewPipe de la F-droid)
