@@ -1,6 +1,12 @@
 # De-Google-Script
 Un script que se encarga de eliminar las aplicaciones de Google del dispositivo Android.
 
+# Requisitos
+Es necesario tener instalados ADB. Para ello utilizamos el comando:
+
+sudo apt install adb 
+
+# Caracteristicas
 Elimina las siguientes aplicaciones:
 
 - YouTube. (Recomendado utilizar NewPipe de la F-droid)
