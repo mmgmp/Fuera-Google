@@ -54,5 +54,5 @@ adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
 # Google chrome
 adb shell pm uninstall --user 0 com.android.chrome
 
-# Google Play
+# Google Pay
 adb shell pm uninstall --user 0 com.google.android.apps.walletnfcrel
