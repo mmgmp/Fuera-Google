@@ -2,7 +2,7 @@
 Un script que se encarga de eliminar las aplicaciones de Google del dispositivo Android.
 
 # Requisitos
-Es necesario tener instalados ADB. Para ello utilizamos el comando:
+Para correr el script es cesario tener instalado ADB, para instalar se ejecuta el siguiente comando:
 
 ```java
 sudo apt install adb 
