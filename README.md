@@ -1,4 +1,4 @@
-# De-Google-Script
+# Fuera-Google
 Un bash script que se encarga de eliminar las aplicaciones de Google del dispositivo Android. Es recomendable instalar aplicaciones alternativas para hacer uso de los servicion eliminados, a ser preferible a traves de la F-Droid.
 
 # Requisitos
