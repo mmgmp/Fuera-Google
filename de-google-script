@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Este script se utiliza para de-Googelear un telefono android, en caso de
-# no tener instalado adb, se le instalará automáticamente
+# Este script borra todas las aplicaciones de google de un dispositivo android
+# utilizando la herramienta Android Debug Bridge.
 
 function borrarApp(){
     adb shell pm uninstall --user 0 $1
@@ -9,9 +9,9 @@ function borrarApp(){
 
 if [ "$(adb)" ]
 then
-    echo "ADB está instalado"
+    echo "$(tput setaf 2)"ADB está instalado"$(tput sgr0)"
 else
-    echo "ADB no está instalado, instálalo y ejecute el script"
+    echo "$(tput setaf 1)"ADB no está instalado, instálalo y ejecute el script"$(tput sgr0)"
     exit
 fi
 
