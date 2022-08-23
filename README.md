@@ -1,30 +1,38 @@
 # Fuera-Google
-Un bash script que se encarga de eliminar las aplicaciones de Google del dispositivo Android. Es recomendable instalar aplicaciones alternativas para hacer uso de los servicion eliminados, a ser preferible a traves de la F-Droid.
+Un bash script que se encarga de eliminar las aplicaciones de Google del dispositivo Android. Es recomendable instalar aplicaciones alternativas para hacer uso de los servicios eliminados, como por ejemplo F-Droid.
 
 # Requisitos
-Para correr el script es cesario tener instalado ADB, para instalar se ejecuta el siguiente comando:
+Para correr el script es necesario tener instalado ADB, para instalar se ejecuta el siguiente comando:
 
-```java
-sudo apt install adb 
+- Debian/Ubuntu
+    ```
+    sudo apt install android-tools-adb
+    ```
+- Fedora/SUSE
+    ```
+    sudo yum install android-tools
+    ```
+Es **requerido** que este activada la **depuración de USB** a traves de las opciones de desarollador de su dispositivo android.
+
+Una vez que este activada la depuración USB ejecuta:
+
 ```
-Decir que es **requerido** que este activada la **depuracion de USB** a traves de las opciones de desarollador.
-
-Una vez que esta activada ejecuta:
-
-```java
 adb devices 
 ```
-Y deveria de aparecer tu dispositivo en la terminal.
+Y debería de aparecer tu dispositivo en la terminal, ejemplo:
+```
+List of devices attached
+********	device
+```
 
 Para ejecutarlo hay que ir al directorio del script y ejecutar:
 
-```java
+```
 ./de-google-script
 ```
-# Caracteristicas
+# Características
 Elimina las siguientes aplicaciones:
-
-- YouTube. (Alternativa: NewPipe)
+- YouTube (Alternativa: NewPipe)
 - Gmail
 - Keep
 - Play Store (Alternativa: Aurora Store)

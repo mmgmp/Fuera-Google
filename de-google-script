@@ -1,58 +1,21 @@
 #!/bin/bash
 
-# Este script se utiliza para de-Googelear un telefono android, para ello es
-# necesario tener instalado adb en el ordenador.
+# Este script borra todas las aplicaciones de google de un dispositivo android
+# utilizando la herramienta Android Debug Bridge.
 
-# Estas son todas las aplicaciones que se van a eliminar, sin no quieres quitar 
-# una añade un # delante.
+function borrarApp(){
+    adb shell pm uninstall --user 0 $1
+}
 
-# YouTube. (Recomendado utilizar NewPipe de la F-droid)
-adb shell pm uninstall --user 0 com.google.android.youtube
+if [ "$(adb)" ]
+then
+    echo "$(tput setaf 2)"ADB está instalado"$(tput sgr0)"
+else
+    echo "$(tput setaf 1)"ADB no está instalado, instálalo y ejecute el script"$(tput sgr0)"
+    exit
+fi
 
-# Gmail
-adb shell pm uninstall --user 0 com.google.android.gm
-
-# Keep
-adb shell pm uninstall --user 0 com.google.android.keep
-
-# Play Store (Recomendado utilizar Aurora Store de la F-droid)
-adb shell pm uninstall --user 0 com.android.vending
-
-# Calendario
-adb shell pm uninstall --user 0 com.google.android.calendar
-
-# Mapas (Recomendado utilizar la version web)
-adb shell pm uninstall --user 0 com.google.android.apps.maps
-
-# Bienestar Digial
-adb shell pm uninstall --user 0 com.google.android.apps.wellbeing
-
-# Drive
-adb shell pm uninstall --user 0 com.google.android.apps.docs
-
-# Contactos (Recomendado utilizar Simple Contacts de la F-droid)
-adb shell pm uninstall --user 0 com.google.android.contacts
-
-# App de Google
-adb shell pm uninstall --user 0 com.google.android.googlequicksearchbox
-
-# Fotos (Recomendado utilizar Simple Gallery de la F-droid)
-adb shell pm uninstall --user 0 com.google.android.apps.photos
-
-# Mensajes (Recomendado utilizar Simple SMS de la F-droid)
-adb shell pm uninstall --user 0 com.google.android.apps.messaging
-
-# Telefono (Recomendado utilizar Simple Dialer de la F-droid)
-adb shell pm uninstall --user 0 com.google.android.dialer
-
-# Archivos
-adb shell pm uninstall --user 0 com.google.android.apps.nbu.files
-
-# Asistente
-adb shell pm uninstall --user 0 com.google.android.apps.googleassistant
-
-# Google chrome
-adb shell pm uninstall --user 0 com.android.chrome
-
-# Google Pay
-adb shell pm uninstall --user 0 com.google.android.apps.walletnfcrel
+while IFS= read -r line
+do
+    borrarApp $line
+done < aplicaciones-borrar.txt
